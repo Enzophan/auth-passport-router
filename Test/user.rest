@@ -1,0 +1,46 @@
+POST http://localhost:5000/api/user/register
+content-type: application/json
+
+{
+    "name": "sample",
+    "email": "tester.qup@gmail.com",
+    "password": "abc@12345",
+    "type": "admin"
+}
+
+###
+GET  http://localhost:5000/api/user/get
+
+###
+GET  http://localhost:5000/api/user
+
+
+###
+POST  http://localhost:5000/auth/login
+content-type: application/json
+
+{
+    "email": "tester.qup@gmail.com",
+    "password": "abc@12345"
+}
+
+### Email incorrect
+POST  http://localhost:5000/auth/login
+content-type: application/json
+
+{
+    "email": "tester1.qup@gmail.com",
+    "password": "abc@12345"
+}
+
+### Password incorrect
+POST  http://localhost:5000/auth/login
+content-type: application/json
+
+{
+    "email": "tester.qup@gmail.com",
+    "password": "abc@123456"
+}
+
+###
+GET http://localhost:5000/auth/logout
